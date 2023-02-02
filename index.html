@@ -8,14 +8,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body onload="loadCountries()">
         
-        <h1>Countries and States</h1>
-        <p>An onboarding project developed by Sean Rowan</p>
+        <div id="header">
+            <h1>Countries and States</h1>
+            <p>An onboarding project developed by Sean Rowan</p>
+        </div>
+
+        <main>
+    
+            <form>
+                <label for="countries">Countries:</label>
+                <select id="countries" name="country" required>
+
+                </select>
+            </form>
+
+        </main>
 
         
 
 
-        <script src="" async defer></script>
+        <script src="script.js" async defer></script>
     </body>
 </html>
