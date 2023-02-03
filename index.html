@@ -16,19 +16,31 @@
         </div>
 
         <main>
-    
             <form>
                 <label for="countries">Countries:</label>
-                <select id="countries" name="country" required>
-
+                <select id="countries" name="country" onchange="loadStates()" required>
+                    <option value="">Select a country</option>
                 </select>
-            </form>
+                
+                <label for="states">States:</label>
+                <select id="states" name="states" required>
+                    <option value="">Select a state</option>
+                </select>
 
+                <label for="newCountry">Enter new country name:</label>
+                <input type="text" id="newCountry" name="newCountry">
+
+                <label for="newCountryCode">Enter country code:</label>
+                <input type="text" id="newCountryCode" name="newCountryCode" minlength="2" maxlength="2">
+
+                <label for="newState">Enter new state name:</label>
+                <input type="text" id="newState" name="newState">
+
+                <label for="submit-btn"></label>
+                <button type="submit" id="submit-btn" onsubmit="sendNewLocation()">Submit Me</button>
+            </form>
         </main>
 
-        
-
-
-        <script src="script.js" async defer></script>
+        <script src="countries.js" async defer></script>
     </body>
 </html>
