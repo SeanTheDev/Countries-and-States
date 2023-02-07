@@ -13,32 +13,62 @@
         <div id="header">
             <h1>Countries and States</h1>
             <p>An onboarding project developed by Sean Rowan</p>
+            <hr>
         </div>
 
         <main>
-            <form>
-                <label for="countries">Countries:</label>
-                <select id="countries" name="country" onchange="loadStates()" required>
-                    <option value="">Select a country</option>
+
+            <div id="country-state-dropdown">
+                <label for="country">Country:</label>
+                <select id="country" name="country" class="country-dropdown" onchange="loadStates()">
+                    <option value="" selected disabled>Select a country</option>
                 </select>
                 
-                <label for="states">States:</label>
-                <select id="states" name="states" required>
-                    <option value="">Select a state</option>
+                <label for="state">State:</label>
+                <select id="state" name="state">
+                    <option value="" selected disabled>Select a state</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <form id="add-new-country">         
+                <!-- Package form into JSON -->
+                <h2>Add a New Country</h2>
+
+                <label for="newCountryName">Country name:</label>
+                <input type="text" id="newCountryName" name="newCountryName" minlength="4">
+
+                <label for="newCountryCode">Country code:</label>
+                <input type="text" id="newCountryCode" name="newCountryCode" minlength="2" maxlength="3">
+
+                <!-- Submit Button -->
+                <label for="submit-country"></label>
+                <button type="submit" id="submit-country">Submit</button>
+
+            </form>
+    
+            <hr>
+
+            <form id="add-new-state">
+                <h2>Add a New State</h2>
+
+                <label for="newStateName">State name:</label>
+                <input type="text" id="newStateName" name="newStateName" minlength="4">
+
+                <label for="newStateCode">State Code:</label>
+                <input type="text" id="newStateCode" name="newStateCode" minlength="2" maxlength="3">
+
+                <label for="newStateCountry">Countries:</label>
+                <select id="newStateCountry" name="newStateCountry" class="country-dropdown">
+                    <option value="" selected disabled>Select a country</option>
                 </select>
 
-                <label for="newCountry">Enter new country name:</label>
-                <input type="text" id="newCountry" name="newCountry">
-
-                <label for="newCountryCode">Enter country code:</label>
-                <input type="text" id="newCountryCode" name="newCountryCode" minlength="2" maxlength="2">
-
-                <label for="newState">Enter new state name:</label>
-                <input type="text" id="newState" name="newState">
-
-                <label for="submit-btn"></label>
-                <button type="submit" id="submit-btn" onsubmit="sendNewLocation()">Submit Me</button>
+                <!-- Submit Button -->
+                <label for="submit-state"></label>
+                <button type="submit" id="submit-state">Submit</button>
             </form>
+
         </main>
 
         <script src="countries.js" async defer></script>
