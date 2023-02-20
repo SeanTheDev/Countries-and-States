@@ -19,7 +19,6 @@ function loadCountries(){
                 option.setAttributeNode(countryId);
                 option.value = countryData[i]['code'];
                 option.textContent = countryData[i]['name'];
-                // option.createAttribute('data-countryId').value = countryData[i]['id'];
                 dropdown.appendChild(option);
             }
         });
@@ -67,7 +66,7 @@ function sendNewCountry(){
     request.onload = () => {
         
         if (request.readyState === XMLHttpRequest.DONE){
-            if(request.status > 200 && request.status < 300) {
+            if(request.status >= 200 && request.status < 300) {
                 console.log("Success");
                 console.log(request.responseText);
                 alert("New Country Added!");
@@ -89,7 +88,7 @@ function sendNewCountry(){
 }
 
 function sendNewState(){
-
+    //Add parameters for state code, state name, and country id
     const request = new XMLHttpRequest();
     request.open("POST", "https://xc-countries-api.fly.dev/api/states/");
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -103,7 +102,7 @@ function sendNewState(){
     request.onload = () => {
         
         if (request.readyState === XMLHttpRequest.DONE){
-            if(request.status > 200 && request.status < 300) {
+            if(request.status >= 200 && request.status < 300) {
                 console.log("Success");
                 console.log(request.responseText);
                 alert("New State Added!");
@@ -124,8 +123,6 @@ function sendNewState(){
     }));
 
 }
-
-
 
 /*
     Utility Functions
